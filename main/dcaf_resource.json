@@ -1,0 +1,30 @@
+{
+    "saveModelAPI": 
+        {
+            "saveModelURL": "http://localhost:10010/compiler/v1/model/db/save",
+            "saveModelBody": "{\"url\": \"/tosca-models/csars/dcaf-resource.csar\", \"resolve\": true, \"coerce\": false, \"quirks\": [\"data_types.string.permissive\"], \"output\": \"dcaf_input_service.json\", \"inputs\": \"\", \"inputsUrl\": \"\", \"force\": true}"
+        },
+    "getInputAPI" : 
+        {
+            "getInputsURL": "http://localhost:10010/compiler/v1/db/models/model/inputs",
+            "getInputsBody": "{\"service\": \"/tosca-models/csars/dcaf-resource.csar\"}",
+            "integerCounts": 0,
+            "stringCounts": 5,
+            "listCounts": 0,
+            "inputModelKey": "dcaf-resource",
+            "expectedNames": {
+                "stream_processor_type": true,
+                "metrics_server_type": true,
+                "gen_tel_statsd_url": true,
+                "metrics_dashboard_type": true,
+                "collector_input_plugin": true
+            }
+        },
+    
+    "deleteModelAPI":{
+        "deleteModelURL": "http://localhost:10010/compiler/v1/model/db/dcaf_input_service",
+        "deleteModelBody": "{\"namespace\": \"zip:file:c:/tosca-models/csars/dcaf-resource.csar!/dcaf-serice.yaml\",\"version\": \"tick_profile_1_0\",\"includeTypes\": true}"   
+    }
+   
+
+}
