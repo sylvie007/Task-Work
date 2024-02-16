@@ -1,0 +1,35 @@
+{
+    "createInstanceAPI": {
+        "createInstanceURL": "http://localhost:10010/so/v1/db/schema/create",
+        "createInstanceBody": "{\"name\": \"demo1\", \"output\": \"dcaf.yaml\", \"generate-workflow\": false, \"execute-workflow\": false, \"list-steps-only\": false, \"execute-policy\": true, \"inputs\": { \"cluster\": { \"cluster-input-resource\": { \"cluster_name\": \"dcaf\" } } }, \"inputsUrl\": \"\", \"service\": \"zip:/tosca-models/csars/dcaf-cmts.csar!/dcaf_service.yaml\" }"
+    },     
+    "getInstancesAPI": {
+        "getInstancesURL": "http://localhost:10000/so/v1/instances",
+        "expectedResult": "Success",
+        "expectedUidCount": 4,
+        "expectedVersionCount": 4
+      },
+    "deployedInstancesAPI": {
+        "apiURL": "http://localhost:10000/so/v1/instances/deployedInstances",
+        "expectedData": ["demo1"],
+        "expectedMessage": "List Of Deployed Models",
+        "expectedResult": "Success"
+    },  
+    "saveCloutFileAPI":{
+        "savecloutURL": "http://localhost:10000/so/clout/db/save/democase",
+        "expectedMessage": "The clout file content is saved in the database",
+        "expectedResult": "Success"
+    },
+    "readCloutAPI":{
+        "readcloutURL": "http://localhost:10000/so/clout/db/democase",
+        "expectedMessage": "The clout content is read from database",
+        "expectedResult": "Success"
+    },
+    "parseModelAPI": {
+         "parseModelURL": "http://localhost:10000/so/v1/db/models/parse"
+    },
+    "deleteInstanceAPI":{
+        "deleteModelURL": "http://localhost:10000/so/v1/instances/deleteInstance/demo1"
+    
+    }
+}
